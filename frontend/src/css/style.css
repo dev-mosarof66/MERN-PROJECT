@@ -1,0 +1,42 @@
+.spin {
+    position: relative;
+    padding: 20px 40px;
+    background: black;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.spin::before {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, red, blue, purple, red);
+    z-index: -1;
+    border-radius: 15px;
+    animation: spin-border 4s linear infinite;
+}
+
+.spin::after {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: black;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+@keyframes spin-border {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
